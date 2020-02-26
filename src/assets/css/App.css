@@ -1,0 +1,14 @@
+footer{
+    background-color: #707070;
+}
+
+.celda{
+    height: 20%;
+    vertical-align: auto;
+    margin: 3px;
+    text-align: center;
+    border: solid black 1px;
+}
+#over-scroll{
+    overflow: scroll; 
+}
