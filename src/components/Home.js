@@ -5,6 +5,7 @@ import { Horario } from './Horario'
 import $ from 'jquery'
 import { FormAddClase } from './FormAddClase';
 import { Schedule } from './Schedule';
+import { NewSchedule } from './NewSchedule';
 
 export class Home extends React.Component {
     handleClickAdd(e) {
@@ -22,30 +23,11 @@ export class Home extends React.Component {
                         <div className='column is-8 has-text-centered'>
                             <h3 className='title is-3'>Horario</h3>
                         </div>
-                        <div className='column is-2'>
-                            <button onClick={ this.handleClickAdd } className="button is-rounded is-success">
-                                <span className="icon is-large">
-                                    <i className="fa fa-plus"></i>
-                                </span>
-                            </button>
-
-                            <button className="button is-rounded is-warning">
-                                <span className="icon is-large">
-                                    <i className="fa fa-pencil-square-o"></i>
-                                </span>
-                            </button>
-
-                            <button className="button is-rounded is-link">
-                                <span className="icon is-large">
-                                    <i className="fa fa-info"></i>
-                                </span>
-                            </button>
-                        </div>
                     </div>
                 </div>
                 <br/>
                 <div className='row' id='over-scroll'>
-                    <Schedule/>
+                    <NewSchedule/>
                 </div>
                 <FormAddClase/>
             </div>
