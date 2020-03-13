@@ -33,10 +33,39 @@ export class NewSchedule extends React.Component {
         Id: 2,
         Subject: 'Sistemas Embebidos',
         StartTime: new Date(2020, 2, 9, 10, 0),
-        EndTime: new Date(2020, 2, 9, 12, 30),
+        EndTime: new Date(2020, 2, 9, 12, 0),
         Teacher: 'Juan Martinez Bernaldino',
         Comments: 'Arduino y Java'
-    }];
+    },{
+        Id: 1,
+        Subject: 'Visión Artificial',
+        StartTime: new Date(2020, 2, 11, 7, 0),
+        EndTime: new Date(2020, 2, 11, 9, 0),
+        Teacher: 'Kena Puga',
+        Comments: 'Python3 y OpenCV'
+    },
+    {
+        Id: 3,
+        Subject: 'Estructuras de datos',
+        StartTime: new Date(2020, 2, 13, 11, 0),
+        EndTime: new Date(2020, 2, 13, 13, 0),
+        Teacher: 'Rossy Michel',
+        Comments: 'JGrasp'
+    }
+];
+
+onPopupOpen(args) {
+    if (args.type === 'Editor') {
+        args.duration = 60;
+    }
+
+    if (args.type === 'QuickInfo') {
+       args.type = 'Editor';
+        // args.cancel = true;
+    }
+
+    
+}
 
     // ESTA ERA PARA ACOMODARLOS CHIDO, PERO NO SE UTILIZA ESTA
     editorTemplate(props: any): JSX.Element {
@@ -83,7 +112,7 @@ export class NewSchedule extends React.Component {
 
     // ESTE TEMPLATE ES EL QUE SE USA
     editorTemplate2(props) {
-        return (props !== undefined ? <table className="custom-event-editor" style={{ width: '100%' }}>
+        return (props !== undefined ? <table className="custom-event-editor" style={{ width: '100%',padding: '5' }}>
             <tbody>
                 <tr><td className="e-textlabel">Materia</td><td colSpan={4}>
                     <input id="Materia" className="e-field e-input" type="text" name="Subject" style={{ width: '100%' }} />
@@ -109,14 +138,13 @@ export class NewSchedule extends React.Component {
     render() {
         return (
             <ScheduleComponent
-                selectedDate={new Date(2020, 2, 9)}
-                dayHeaderFormat='Wide'
-                rowAutoHeight={true}
+                cssClass='schedule-cell-dimension'
                 width='100%' height='100%'
                 startHour="7:00" endHour='21:00'
                 firstDayOfWeek={1} showWeekend={false}
                 showTimeIndicator={true}
                 editorTemplate={this.editorTemplate2.bind(this)}
+                popupOpen={this.onPopupOpen.bind(this)}
                 eventSettings={{
                     dataSource: this.data,
                     fields: {
@@ -128,7 +156,6 @@ export class NewSchedule extends React.Component {
                         endTime: { name: 'EndTime' }
                     }
                 }}
-                rowAutoHeight={true}
             >
                 <ViewsDirective>
                     <ViewDirective workDays={this.workDays} option='Day' />

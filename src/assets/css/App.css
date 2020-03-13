@@ -21,3 +21,11 @@ footer{
 #over-scroll{
     overflow: scroll; 
 }
+.schedule-cell-dimension.e-schedule .e-vertical-view .e-time-cells-wrap table td,
+.schedule-cell-dimension.e-schedule .e-vertical-view .e-work-cells {
+    height: 20px;
+}
+
+.schedule-cell-dimension.e-schedule .e-month-view .e-work-cells {
+    height: 40px;
+}

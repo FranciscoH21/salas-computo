@@ -7,10 +7,10 @@ export class ListaSalas extends React.Component {
                 <p className="control has-icons-left">
                     <span className="select">
                         <select>
-                            <option>Sala 1</option>
-                            <option>Sala 2</option>
-                            <option>Sala 3</option>
-                            <option>Sala 4</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
                         </select>
                     </span>
                     <span className="icon is-small is-left has-text-black">
