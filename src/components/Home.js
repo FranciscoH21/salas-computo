@@ -30,19 +30,25 @@ export class Home extends React.Component {
                 </div>
                 <div className='row'>
                     <div className='columns'>
-                        <div className='column is-2'>
-                            <label className='e-label' htmlFor='ddlelement'>Periodo</label>
-                            <DropDownListComponent id="ddlelement" dataSource={this.periodos} placeholder="Seleccione un periodo" />
+
+                        <div className='column is-6 field has-addons'>
+                            <div className='control is-expanded'>
+                                <label className='e-label' htmlFor='ddlelement'>Periodo</label>
+                                <DropDownListComponent id="ddlelement" dataSource={this.periodos} placeholder="Seleccione un periodo" />
+                            </div>
+                            <div className='control'>
+                                <ButtonComponent onClick={this.handleClickAddPeriodo} cssClass='e-round' iconCss='fa fa-plus' isPrimary={true} />
+                            </div>
                         </div>
-                        <div className='column is-1'>
-                            <ButtonComponent onClick={this.handleClickAddPeriodo} cssClass='e-round' iconCss='fa fa-plus' isPrimary={true} />
-                        </div>
-                        <div className='column is-2'>
-                            <label className='e-label'>Sala</label>
-                            <DropDownListComponent id="dddlelement" dataSource={this.salas} placeholder="Seleccione una sala" />
-                        </div>
-                        <div className='column is-1'>
-                            <ButtonComponent onClick={this.handleClickAddSala} cssClass='e-round' iconCss='fa fa-plus' isPrimary={true} />
+
+                        <div className='column is-6 field has-addons'>
+                            <div className='control is-expanded'>
+                                <label className='e-label'>Sala</label>
+                                <DropDownListComponent id="dddlelement" dataSource={this.salas} placeholder="Seleccione una sala" />
+                            </div>
+                            <div className='control'>
+                                <ButtonComponent onClick={this.handleClickAddSala} cssClass='e-round' iconCss='fa fa-plus' isPrimary={true} />
+                            </div>
                         </div>
                     </div>
 
